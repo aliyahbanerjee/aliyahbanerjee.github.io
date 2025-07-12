@@ -14,41 +14,28 @@
       }
 
       .wrapper {
-        display: flex;
         max-width: 1200px;
-        gap: 60px;
-        align-items: flex-start;
         width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
       }
 
-      .left-column {
-        flex: 1;
-        text-align: center;
+      .header-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
       }
 
       .left-column h1 {
         font-size: 2.5em;
-        margin-bottom: 20px;
-      }
-
-      .left-column img {
-        width: 300px;
-        max-width: 90%;
-        border-radius: 16px;
-        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      }
-
-      .right-column {
-        flex: 0.6; /* narrower bio */
-        font-size: 1.1em;
-        line-height: 1.6;
-        margin-top: 140px; /* aligns with image */
+        margin: 0;
       }
 
       .menu {
-        text-align: right;
-        margin-bottom: 20px;
         font-size: 0.9em;
+        text-align: right;
+        margin-top: 10px;
       }
 
       .menu a {
@@ -60,23 +47,51 @@
       .menu a:hover {
         text-decoration: underline;
       }
+
+      .content-row {
+        display: flex;
+        gap: 60px;
+        align-items: flex-start;
+      }
+
+      .left-column img {
+        width: 300px;
+        max-width: 90%;
+        border-radius: 16px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      }
+
+      .right-column {
+        flex: 0.6;
+        font-size: 1.1em;
+        line-height: 1.6;
+      }
     </style>
   </head>
   <body>
     <div class="wrapper">
-      <div class="left-column">
-        <h1>Aliyah Banerjee</h1>
-        <img src="WhatsApp Image 2025-07-12 at 13.26.13.jpeg" alt="Aliyah's photo" />
-      </div>
-      <div class="right-column">
-        <div class="menu">
-          <a href="Research.html">Research</a>
-          <a href="Resume_Aliyah Banerjee (4).pdf">CV</a>
+      <div class="header-row">
+        <div class="left-column">
+          <h1>Aliyah Banerjee</h1>
         </div>
-        <p>
-          Hello! I am Aliyah, a final-year undergraduate economics student in the Department of Economics at UT Austin. <br /><br />
-          My research interests currently lie in incomplete information games, bargaining, and development (particularly decision-making and bargaining power within rural households, health, and environment).
-        </p>
+        <div class="right-column">
+          <div class="menu">
+            <a href="Research.html">Research</a>
+            <a href="Resume_Aliyah Banerjee (4).pdf">CV</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-row">
+        <div class="left-column">
+          <img src="WhatsApp Image 2025-07-12 at 13.26.13.jpeg" alt="Aliyah's photo" />
+        </div>
+        <div class="right-column">
+          <p>
+            Hello! I am Aliyah, a final-year undergraduate economics student in the Department of Economics at UT Austin. <br /><br />
+            My research interests currently lie in incomplete information games, bargaining, and development (particularly decision-making and bargaining power within rural households, health, and environment).
+          </p>
+        </div>
       </div>
     </div>
   </body>
