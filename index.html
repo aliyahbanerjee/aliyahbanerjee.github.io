@@ -14,54 +14,45 @@
       }
 
       .wrapper {
-        width: 100%;
-        max-width: 1000px;
-      }
-
-      h1 {
-        text-align: center;
-        margin-bottom: 20px;
-        font-size: 2.5em;
-      }
-
-      .image-container {
         display: flex;
-        justify-content: center;
-        margin-bottom: 40px;
+        max-width: 1200px;
+        gap: 60px;
+        align-items: flex-start;
       }
 
-      img {
+      .left-column {
+        flex: 1;
+        text-align: center;
+      }
+
+      .left-column h1 {
+        font-size: 2.5em;
+        margin-bottom: 20px;
+      }
+
+      .left-column img {
         width: 300px;
         max-width: 90%;
         border-radius: 16px;
         box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
       }
 
-      .container {
-        display: flex;
-        justify-content: center;
-        gap: 40px;
-      }
-
-      .bio {
-        max-width: 500px;
+      .right-column {
+        flex: 1.2;
         font-size: 1.1em;
         line-height: 1.6;
+        padding-top: 20px;
       }
     </style>
   </head>
   <body>
     <div class="wrapper">
-      <h1>Aliyah Banerjee</h1>
-
-      <div class="image-container">
+      <div class="left-column">
+        <h1>Aliyah Banerjee</h1>
         <img src="WhatsApp Image 2025-07-12 at 13.26.13.jpeg" alt="Aliyah's photo" />
       </div>
-
-      <div class="container">
-        <div class="bio">
-          <p>Hello! I’m Aliyah, a researcher and writer with interests in philosophy, public policy, and the arts. I use this space to share my work, thoughts, and experiments in writing and design. Thanks for visiting!</p>
-        </div>
+      <div class="right-column">
+        <p>Hello! I’m Aliyah, a researcher and writer with interests in philosophy, public policy, and the arts. I use this space to share my work, thoughts, and experiments in writing and design. Thanks for visiting!</p>
       </div>
     </div>
   </body>
