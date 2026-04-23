@@ -1,137 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Research Projects</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-      line-height: 1.6;
-      color: #333;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Research — Aliyah Banerjee</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --blush: #e8a5a0;
+        --blush-light: #f5d4d1;
+        --blush-pale: #fdf0ef;
+        --blush-deep: #c97c77;
+        --ink: #2a2020;
+        --ink-muted: #6b5555;
+        --cream: #faf7f5;
+        --rule: #e2ccc9;
+      }
 
-    /* header styles copied from index */
-    .header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 40px;
-    }
-    .left-column h1 {
-      font-size: 2em;
-      margin: 0;
-    }
-    .menu {
-      font-size: 0.9em;
-      text-align: right;
-      margin-top: 10px;
-    }
-    .menu a {
-      margin-left: 20px;
-      text-decoration: none;
-      color: #333;
-    }
-    .menu a:hover {
-      text-decoration: underline;
-    }
+      * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    .project {
-      margin-bottom: 40px;
-      padding-bottom: 20px;
-      border-bottom: 1px solid #ccc;
-    }
-    .project-title {
-      font-size: 1.4em;
-      margin-bottom: 8px;
-      color: #0056b3;
-    }
-    .project-link {
-      display: inline-block;
-      margin-bottom: 12px;
-      color: #1a73e8;
-      text-decoration: none;
-    }
-    .project-link:hover {
-      text-decoration: underline;
-    }
-    .project-desc {
-      font-size: 1em;
-      color: #555;
-    }
-  </style>
-</head>
-<body>
-  <!-- header added -->
-  <div class="header-row">
-    <div class="left-column">
-      <h1>Aliyah Banerjee</h1>
-    </div>
-    <div class="right-column">
-      <div class="menu">
+      body {
+        font-family: 'EB Garamond', Georgia, serif;
+        background-color: var(--cream);
+        color: var(--ink);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      body::before {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.4;
+      }
+
+      .top-rule {
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--blush), var(--blush-deep), var(--blush), transparent);
+        position: relative;
+        z-index: 1;
+      }
+
+      .page {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 56px 48px 80px;
+        position: relative;
+        z-index: 1;
+        animation: fadeUp 0.9s ease both;
+      }
+
+      @keyframes fadeUp {
+        from { opacity: 0; transform: translateY(18px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        padding-bottom: 28px;
+        border-bottom: 1px solid var(--rule);
+        gap: 24px;
+      }
+
+      .site-name {
+        font-family: 'Cormorant Garamond', Georgia, serif;
+        font-size: 2.8em;
+        font-weight: 300;
+        letter-spacing: 0.02em;
+        color: var(--ink);
+        line-height: 1;
+        text-decoration: none;
+      }
+
+      nav {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+        flex-shrink: 0;
+      }
+
+      nav a {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1em;
+        font-weight: 500;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--ink-muted);
+        position: relative;
+        transition: color 0.25s;
+      }
+
+      nav a::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background: var(--blush-deep);
+        transition: width 0.3s ease;
+      }
+
+      nav a:hover { color: var(--blush-deep); }
+      nav a:hover::after { width: 100%; }
+
+      /* Page title */
+      .page-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.1em;
+        font-weight: 400;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--blush-deep);
+        text-align: center;
+        margin-top: 52px;
+        margin-bottom: 48px;
+      }
+
+      /* Projects */
+      .project {
+        padding-bottom: 40px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid var(--rule);
+      }
+
+      .project:last-child {
+        border-bottom: none;
+        margin-bottom: 0;
+      }
+
+      .project-title {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 1.45em;
+        font-weight: 500;
+        color: var(--ink);
+        line-height: 1.3;
+        margin-bottom: 10px;
+      }
+
+      .project-link {
+        display: inline-block;
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.88em;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--blush-deep);
+        text-decoration: none;
+        border-bottom: 1px solid var(--blush-light);
+        margin-bottom: 14px;
+        transition: border-color 0.2s, color 0.2s;
+      }
+
+      .project-link:hover {
+        color: var(--ink);
+        border-color: var(--blush-deep);
+      }
+
+      .project-desc {
+        font-size: 1.08em;
+        line-height: 1.8;
+        color: var(--ink);
+      }
+
+      /* Footer */
+      footer {
+        margin-top: 72px;
+        padding-top: 24px;
+        border-top: 1px solid var(--rule);
+        display: flex;
+        justify-content: center;
+        gap: 36px;
+      }
+
+      footer a {
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 0.82em;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-muted);
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      footer a:hover { color: var(--blush-deep); }
+
+      @media (max-width: 680px) {
+        .page { padding: 36px 24px 60px; }
+        header { flex-direction: column; gap: 16px; }
+        .site-name { font-size: 2.1em; }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top-rule"></div>
+    <div class="page">
+      <header>
+        <a class="site-name" href="index.html">Aliyah Banerjee</a>
+        <nav>
+          <a href="index.html">Home</a>
+          <a href="Research.html">Research</a>
+          <a href="CV.html">CV</a>
+        </nav>
+      </header>
+
+      <div class="page-title">Research Projects</div>
+
+      <div class="project">
+        <div class="project-title">Two Games Under False Promise of Marriage</div>
+        <div class="project-desc">
+          This paper studies cohabitation (live-in) relationships under a possibility of deceitful promises of future marriage. For a man and a woman who are unmarried and living together in the same household, it is assumed from rising cases of false marriage promise in India that the woman is uncertain about the intentions of her partner regarding marriage, and that he may be of an honest or a scoundrel type. Two Bayesian games and their repeated forms are analysed, with the Bayesian structure aimed at representing uncertainty and the repeated form modelling a relationship over time with a series of interactions. The first game analysed is one in which partners must participate or conflict in some joint household decision. The second game introduces uncertainty into Lundberg and Pollak's 1994 repeated model of partners' voluntary contributions to public goods.
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Young Women Self Help Group Membership in Uttar Pradesh: How Does Independent Decision-Making Matter?</div>
+        <div class="project-desc">
+          This paper explores how decision-making independence impacts the membership of Young Women Self Help Groups (YWSHGs), a popular and effective poverty alleviation measure in Uttar Pradesh, India. Adapting Houtenville and Conway's 2008 theoretical model, I illustrate how increased independence of adolescent women in matters of their education, marriage, employment, and finances may lead to higher membership probability and lower socioeconomic barriers to membership. Empirically, using a dataset of 872 adolescent and young women aged 15–21 surveyed in rural Uttar Pradesh, I find that: (1) SHG membership has tangible financial benefits for higher-educated young women, (2) membership probability increases for General caste young women, and (3) membership probability increases even more for general caste members among non-independent young women. I suggest reducing household interference in the life decisions of adolescent women in the region, through updating legal structures, social policies, and educational efforts. These recommendations are aimed at enabling young and adolescent women to partake in Self Help Groups, with their associated benefits, at higher rates.
+        </div>
+      </div>
+
+      <div class="project">
+        <div class="project-title">Virtual Buddies: Enhancing Women's Safety in India through One-Sided Matching <em style="font-size:0.85em; color: var(--ink-muted);">(Commentary)</em></div>
+        <a href="https://stanfordeconreview.com/2025/01/03/commentary-virtual-buddies-enhancing-womens-safety-in-india-through-one-sided-matching/" class="project-link">Published link ↗</a>
+        <div class="project-desc">
+          Safety apps have become popular solutions to address women's safety in India, using features like panic buttons, location-sharing, and SOS alerts to enable safe travel at night and aid in instances of sexual violence or harassment. However, a lack of digital literacy, feelings of constraint with location-sharing services, fear of control by abusive partners, data privacy concerns, and perpetuation of sexual violence stereotypes pose significant barriers for female users of these apps. To alleviate these concerns, using one-sided matching is proposed to build a novel safety platform for women.
+        </div>
+      </div>
+
+      <footer>
         <a href="index.html">Home</a>
         <a href="Research.html">Research</a>
         <a href="CV.html">CV</a>
-      </div>
+      </footer>
     </div>
-  </div>
-
-  <h2>Research Projects</h2>
-
-  <div class="project">
-    <div class="project-title">Two Games Under False Promise of Marriage</div>
-    <div class="project-desc">
-      This paper studies cohabitation (live-in) relationships under a possibility of deceitful promises of future marriage. For a man and a woman who are unmarried and living together in the same household, it is assumed from rising cases of false marriage promise in India that the woman is uncertain about the intentions of her partner regarding marriage, and that he may be of an honest or a scoundrel type. Two Bayesian games and their repeated forms are analysed, with the Bayesian structure aimed at representing uncertainty and the repeated form modelling a relationship over time with a series of interactions. The first game analysed is one in which partners must participate or conflict in some joint household decision. The second game introduces uncertainty into Lundberg and Pollak’s 1994 repeated model of partners’ voluntary contributions to public goods.
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-title">Young Women Self Help Group Membership in
-Uttar Pradesh: How Does Independent
-Decision-Making Matter?</div>
-    <div class="project-desc">
-      This paper explores how decision-making
-independence impacts the membership of Young
-Women Self Help Groups (YWSHGs), a popular
-and effective poverty alleviation measure in Uttar
-Pradesh, India. Adapting Houtenville and Conway’s
-2008 theoretical model, I illustrate how increased
-independence of adolescent women in matters of
-their education, marriage, employment, and finances
-may lead to higher membership probability and lower
-socioeconomic barriers to membership. Empirically,
-using a dataset of 872 adolescent and young women
-aged 15-21 surveyed in rural Uttar Pradesh, I find that:
-1. SHG membership has tangible financial benefits
-for higher-educated young women, 2., membership
-probability increases for General caste young women,
-and 3. membership probability increases even more for
-general caste members among non-independent young
-women. I suggest reducing household interference in
-the life decisions of adolescent women in the region,
-through updating legal structures, social policies, and
-educational efforts. These recommendations are aimed at
-enabling young and adolescent women to partake in Self
-Help Groups, with their associated benefits, at higher
-rates.
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-title">Virtual Buddies: Enhancing Women’s Safety in India through One-Sided Matching (Commentary)</div>
-    <a href="https://stanfordeconreview.com/2025/01/03/commentary-virtual-buddies-enhancing-womens-safety-in-india-through-one-sided-matching/" class="project-link">Link</a>
-    <div class="project-desc">
-      Safety apps have become popular solutions to address women’s safety in India, using features like panic buttons, location-sharing, and SOS alerts to enable safe travel at night and aid in instances of sexual violence or harassment. However, a lack of digital literacy, feelings of constraint with location-sharing services, fear of control by abusive partners, data privacy concerns, and perpetuation of sexual violence stereotypes pose significant barriers for female users of these apps. To alleviate these concerns,  using one-sided matching is proposed to build a novel safety platform for women. 
-    </div>
-  </div>
-
-
-</body>
+  </body>
 </html>
