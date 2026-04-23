@@ -263,11 +263,23 @@
         padding-top: 24px;
         border-top: 1px solid var(--rule);
         text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 36px;
+      }
+
+      footer a {
         font-family: 'Cormorant Garamond', serif;
-        font-size: 0.85em;
+        font-size: 0.82em;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
         color: var(--ink-muted);
-        letter-spacing: 0.06em;
-        font-style: italic;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      footer a:hover {
+        color: var(--blush-deep);
       }
 
       /* ── Responsive ── */
@@ -288,6 +300,7 @@
       <header>
         <div class="site-name">Aliyah Banerjee</div>
         <nav>
+          <a href="index.html">Home</a>
           <a href="Research.html">Research</a>
           <a href="CV.html">CV</a>
         </nav>
@@ -306,7 +319,11 @@
         </section>
       </main>
 
-      <footer>Economics &thinsp;·&thinsp; Game Theory &thinsp;·&thinsp; Kathak</footer>
+      <footer>
+        <a href="index.html">Home</a>
+        <a href="Research.html">Research</a>
+        <a href="CV.html">CV</a>
+      </footer>
     </div>
   </body>
 </html>
